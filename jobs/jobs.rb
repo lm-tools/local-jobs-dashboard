@@ -1,7 +1,7 @@
 require 'json'
 require 'date'
 
-SCHEDULER.every '10s' do
+SCHEDULER.every '10m' do
   response = Net::HTTP.get_response(URI('https://lm-tools-jobs-api.herokuapp.com/api/jobs_in_area/?format=json'))
   job_hashes = JSON.parse(response.body)
   jobs = job_hashes.map do |job_hash|
