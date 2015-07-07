@@ -1,0 +1,64 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #12b0c5;
+$value-color:       #fff;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+$label-color:       rgba(255, 255, 255, 0.7);
+$moreinfo-color:    rgba(255, 255, 255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-jobs styles
+// ----------------------------------------------------------------------------
+.widget-jobs {
+
+  .job {
+    padding-bottom: 5px;
+  }
+
+  background-color: $background-color;
+  vertical-align: top;
+
+  .title {
+    color: $title-color;
+  }
+
+  ol, ul {
+    margin: 0 15px;
+    text-align: left;
+    color: $label-color;
+  }
+
+  ol {
+    list-style-position: inside;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  .job_title {
+    color: $label-color;
+    font-weight: bold;
+  }
+
+  .company-category {
+    color: $label-color;
+    font-size: 14px;
+  }
+
+  .created {
+    color: $label-color;
+    font-size: 12px;
+  }
+
+  .updated-at {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .more-info {
+    color: $moreinfo-color;
+  }
+
+}

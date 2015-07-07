@@ -1,0 +1,15 @@
+<h1 class="title" data-bind="title"></h1>
+
+<ul>
+  <li class="job" data-foreach-item="items">
+    <p class="job_title" data-bind="item.job_title"></p>
+    <p class="company-category">
+      <span class="company" data-bind="item.company"></span>
+      <span class="category" data-bind="item.category"></span>
+    </p>
+    <p class="created" data-bind="item.created"></p>
+  </li>
+</ul>
+
+<p class="more-info" data-bind="moreinfo"></p>
+<p class="updated-at" data-bind="updatedAtMessage"></p>
