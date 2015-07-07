@@ -1,5 +1,5 @@
 require 'json'
-require 'pp'
+require 'date'
 
 SCHEDULER.every '10s' do
   response = Net::HTTP.get_response(URI('https://lm-tools-jobs-api.herokuapp.com/api/jobs_in_area/?format=json'))
@@ -8,7 +8,7 @@ SCHEDULER.every '10s' do
     {
       job_title: job_hash["job_title"],
       company: job_hash["company"]["display_name"],
-      created: job_hash["created"],
+      created: DateTime.parse(job_hash["created"]).strftime("%e %b %Y %H:%M:%S%p"),
       category: job_hash["job_category"]
     }
   end
