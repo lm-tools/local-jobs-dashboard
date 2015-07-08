@@ -5,7 +5,8 @@ require 'net/http'
 require 'json'
 
 # Add your CSV data file inside the scripts/data folder
-# Change the values to the four following entries to something sensible
+# Set the following environment variables (see README for more details)
+
 auth_token = ENV["AUTH_TOKEN"]
 file_name = ENV["FILE_NAME"]
 dashboard_url = ENV["DASHBOARD_URL"]
