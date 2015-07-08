@@ -2,11 +2,14 @@
 
 <ul>
   <li class="job" data-foreach-item="items">
-    <p class="job_title" data-bind="item.job_title"></p>
-    <p class="company-category">
-      <span class="company" data-bind="item.company"></span> - <span class="category" data-bind="item.category"></span>
-    </p>
+    <span class="category" data-bind="item.category"></span>
     <p class="created" data-bind="item.created"></p>
+    <span class="contract_time" data-bind="item.contract_time"></span>
+    <!-- Kept here for possible use later -->
+    <!-- <p class="job_title" data-bind="item.job_title"></p> -->
+    <!-- <p class="company-category">
+      <span class="company" data-bind="item.company"></span>
+    </p> -->
   </li>
 </ul>
 
