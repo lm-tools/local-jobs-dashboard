@@ -5,7 +5,8 @@ require 'net/http'
 require 'json'
 
 # Add your CSV data file inside the scripts/data folder
-# Change the values to the four following entries to something sensible
+# Set the following environment variables (see README for more details)
+
 auth_token = ENV["AUTH_TOKEN"]
 file_name = ENV["FILE_NAME"]
 dashboard_url = ENV["DASHBOARD_URL"]
@@ -39,10 +40,7 @@ end.select { |search_string| search_string.length < 50 }
 
 json_headers = {"Content-Type" => "application/json",
                 "Accept" => "application/json"}
-dashing_formatted_results = cleaned_results.map do |cleaned_result|
-  { "value" => cleaned_result }
-end
-params = {'auth_token' => auth_token, 'items' => dashing_formatted_results}
+params = {'auth_token' => auth_token, 'items' => cleaned_results}
 uri = URI.parse(dashboard_url+'/widgets/'+widget_id)
 http = Net::HTTP.new(uri.host, uri.port)
 response = http.post(uri.path, params.to_json, json_headers)
