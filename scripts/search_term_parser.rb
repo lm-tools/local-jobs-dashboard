@@ -6,10 +6,10 @@ require 'json'
 
 # Add your CSV data file inside the scripts/data folder
 # Change the values to the four following entries to something sensible
-auth_token = 'insert-the-auth-token-here'
-file_name = 'the-name-of-your-csv-file.csv'
-dashboard_url = 'http://your-dashboard-url.com'
-widget_id = 'your-searches-widget-id'
+auth_token = ENV["AUTH_TOKEN"]
+file_name = ENV["FILE_NAME"]
+dashboard_url = ENV["DASHBOARD_URL"]
+widget_id = ENV["WIDGET_ID"]
 
 # Parse CSV and collect the query strings
 
