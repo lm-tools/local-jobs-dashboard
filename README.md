@@ -6,3 +6,11 @@ The environment variables it requires are:
 * `HTTP_USERNAME`
 * `HTTP_PASSWORD`
 * `AUTH_TOKEN`: auth token to push information to this dashboard
+
+## Search term CSV parser and data pusher
+
+In order to update the data in the `search_terms` scrolling widget, you can:
+- add the CSV file that you are interested in to the `scripts/data` folder
+- modify the `scripts/search_term_parser.rb` file to have the correct filename, dashboard and auth variables
+
+The CSV parser is designed to work with the search term CSV data format received on July 8, 2015. 
