@@ -10,9 +10,12 @@ $(function() {
 <% content_for :title do %>Local jobs dashboard 1080p<% end %>
 
 <div class="gridster">
-  <ul>
+  <ul class="hidden-overflow">
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
       <div data-id="jobs" data-view="Jobs"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
+      <div data-id="search_ticker" data-view="Scrollinglist"></div>
     </li>
   </ul>
 </div>
