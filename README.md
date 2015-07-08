@@ -6,6 +6,7 @@ The environment variables it requires are:
 * `HTTP_USERNAME`
 * `HTTP_PASSWORD`
 * `AUTH_TOKEN`: auth token to push information to this dashboard
+* `REDISTOGO_URL`: redis URL
 
 ## Search term CSV parser and data pusher
 
