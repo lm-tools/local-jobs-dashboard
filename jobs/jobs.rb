@@ -15,7 +15,7 @@ SCHEDULER.every '10m', :first_in => 0 do
       job_title: job_hash["job_title"],
       company: job_hash["company"]["display_name"],
       created: minutes_in_words(job_hash["created"]),
-      category: job_hash["job_category"],
+      category: job_hash["job_category"].sub(/Jobs$/, ''),
       contract_time: display_labels.fetch(job_hash["contract_time"], job_hash["contract_time"])
     }
   end
