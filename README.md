@@ -6,6 +6,12 @@ This application sits behind HTTP basic auth.
 
 `dashing start`
 
+## How to run tests
+
+`bundle exec rspec`
+
+[![Build Status](https://magnum.travis-ci.com/lm-tools/local-jobs-dashboard.svg?token=1yXmNiym2JwJbW7AYq7B)](https://magnum.travis-ci.com/lm-tools/local-jobs-dashboard)
+
 ## Requirements
 
 Redis.
