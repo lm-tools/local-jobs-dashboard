@@ -1,6 +1,15 @@
 # local-jobs-dashboard
 
 This application sits behind HTTP basic auth.
+
+## How to run
+
+`dashing start`
+
+## Requirements
+
+Redis.
+
 The environment variables it requires are:
 
 * `HTTP_USERNAME`
@@ -14,7 +23,8 @@ In order to update the data in the `search_terms` scrolling widget, you can:
 - add the CSV file that you are interested in to the `scripts/data` folder
 - have the following environment variables to be set to run that script:
   * `AUTH_TOKEN`
-  * `FILE_NAME`: name of your CSV file in the `scripts/data` folder
+  * `FILE_NAMES`: comma-seperated names of your CSV files in the `scripts/data` folder
+  * `AREA_NAMES`: comma-separated names of the areas you are loading CSVs for (important: should be in the same order as the corresponding `FILE_NAMES`)
   * `DASHBOARD_URL`
   * `WIDGET_ID`
 

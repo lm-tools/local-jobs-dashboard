@@ -1,12 +1,10 @@
 def load_searchterm_data
   @loaded_search_terms = []
   @has_data = false
-  if File.exist?(settings.history_file)
-    history = YAML.load_file(settings.history_file)
-    if history["search_terms"]
-      @loaded_search_terms = YAML.load(history["search_terms"])["data"]["items"]
-      @has_data = true
-    end
+  history = settings.history.get('dashing-history')
+  if history && history["search_terms"]
+    @loaded_search_terms = YAML.load(history["search_terms"])["data"]["items"]
+    @has_data = true
   end
   @search_terms = []
 end
