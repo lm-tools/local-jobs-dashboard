@@ -7,7 +7,7 @@ Redis.current = Redis.new(:host => redis_uri.host,
                           :port => redis_uri.port,
                           :password => redis_uri.password)
 
-set :history, Redis::HashKey.new('dashing-history', :marshal => true)
+set :history, Redis::HashKey.new('dashing-history')
 
 configure do
   set :auth_token, ENV['AUTH_TOKEN']

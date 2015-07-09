@@ -1,11 +1,14 @@
+require 'redis'
+require 'json'
+
 def load_searchterm_data(areas)
   @loaded_search_terms = {}
   @search_terms = {}
   areas.each do |area|
     @loaded_search_terms[area] = []
-    history = settings.history['dashing-history']
-    if history && history["search_terms_#{area}"]
-      @loaded_search_terms[area] = YAML.load(history["search_terms_#{area}"])["data"]["items"]
+    search_terms = Redis.current.hget("dashing-history", "search_terms_#{area}")
+    if search_terms
+      @loaded_search_terms[area] = JSON.parse(search_terms[6...-1])["items"]
     end
     @search_terms[area] = []
   end

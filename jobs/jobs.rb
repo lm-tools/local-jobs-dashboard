@@ -6,17 +6,15 @@ SCHEDULER.every '10m', :first_in => 0 do
     response = Net::HTTP.get_response(URI("#{ENV["JOBS_API_URL"]}/api/jobadverts/?job_centre_label=#{area}"))
     job_hashes = JSON.parse(response.body)
     jobs = job_hashes.map do |job_hash|
-
       display_labels = {
         "full_time" => "Full Time",
         "part_time" => "Part Time"
       }
-
       {
-        job_title: job_hash["job_title"],
-        company: job_hash["company"]["display_name"],
+        job_title: job_hash["title"],
+        company: job_hash["company_name"],
         created: minutes_in_words(job_hash["created"]),
-        category: job_hash["job_category"].sub(/Jobs$/, ''),
+        category: job_hash["category"].sub(/Jobs$/, ''),
         contract_time: display_labels.fetch(job_hash["contract_time"], job_hash["contract_time"])
       }
     end
