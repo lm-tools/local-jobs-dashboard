@@ -16,6 +16,12 @@
     },
     "RACK_ENV":{
       "required":true
+    },
+    "JOBS_API_URL":{
+      "required": true
+    },
+    "AREA_NAMES":{
+      "required": true
     }
   },
   "addons":[
