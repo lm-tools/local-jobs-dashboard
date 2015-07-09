@@ -13,9 +13,10 @@ SCHEDULER.every '10m', :first_in => 0 do
       {
         job_title: job_hash["title"],
         company: job_hash["company_name"],
-        created: TimeHumanizer.new(DateTime.now, DateTime.parse(job_hash["created"])).run,
+        created: "Posted "+TimeHumanizer.new(DateTime.now, DateTime.parse(job_hash["created"])).run,
         category: job_hash["category"].sub(/Jobs$/, ''),
-        contract_time: display_labels.fetch(job_hash["contract_time"], job_hash["contract_time"])
+        contract_time: display_labels.fetch(job_hash["contract_time"], job_hash["contract_time"]),
+        travelling_time: "Approximately #{job_hash["travelling_time"]} away"
       }
     end
     send_event("jobs_#{area}", { title: "Latest jobs", items: jobs })
