@@ -13,36 +13,36 @@ describe TimeHumanizer do
     end
   end
   context "the time is more than a minute and strictly less than an hour ago" do
-    let(:seconds) { rand(61...3599) }
+    let(:seconds) { rand(120...3599) }
     it "returns 'x minutes ago'" do
       expect(result).to eq "#{seconds/60} minutes ago"
     end
-    context "exactly one minute ago" do
-      let(:seconds) { 60 }
+    context "one minute ago" do
+      let(:seconds) { rand(60...119) }
       it "returns '1 minute ago'" do
         expect(result).to eq "1 minute ago"
       end
     end
   end
   context "the time is more than an hour and strictly less than a day ago" do
-    let(:seconds) { rand(3601...86399) }
+    let(:seconds) { rand(7200...86399) }
     it "returns 'x hours ago'" do
       expect(result).to eq "#{seconds/3600} hours ago"
     end
-    context "exactly one hour ago" do
-      let(:seconds) { 3600 }
+    context "one hour ago" do
+      let(:seconds) { rand(3600...7199) }
       it "returns '1 hour ago'" do
         expect(result).to eq "1 hour ago"
       end
     end
   end
   context "the time is more than a day ago" do
-    let(:seconds) { rand(86401...500000) }
+    let(:seconds) { rand(172800...500000) }
     it "returns 'x days ago'" do
       expect(result).to eq "#{seconds/86400} days ago"
     end
-    context "exactly one day ago" do
-      let(:seconds) { 86400 }
+    context "one day ago" do
+      let(:seconds) { rand(86400...172799) }
       it "returns '1 day ago'" do
         expect(result).to eq "1 day ago"
       end
