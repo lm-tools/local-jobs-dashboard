@@ -6,6 +6,10 @@ def load_searchterm_data(areas)
   @search_terms = {}
   areas.each do |area|
     @loaded_search_terms[area] = []
+    redis_uri = URI.parse(ENV["REDISTOGO_URL"])
+    Redis.current = Redis.new(:host => redis_uri.host,
+                              :port => redis_uri.port,
+                              :password => redis_uri.password)
     search_terms = Redis.current.hget("dashing-history", "search_terms_#{area}")
     if search_terms
       @loaded_search_terms[area] = JSON.parse(search_terms[6...-1])["items"]
