@@ -1,7 +1,17 @@
 require 'dashing'
+require 'redis'
+require 'redis-objects'
+
+redis_uri = URI.parse(ENV["REDISTOGO_URL"])
+Redis.current = Redis.new(:host => redis_uri.host,
+                          :port => redis_uri.port,
+                          :password => redis_uri.password)
+
+set :history, Redis::HashKey.new('dashing-history')
 
 configure do
   set :auth_token, ENV['AUTH_TOKEN']
+  set :default_dashboard, 'home'
 
   helpers do
 
