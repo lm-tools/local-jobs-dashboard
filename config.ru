@@ -11,6 +11,7 @@ set :history, Redis::HashKey.new('dashing-history')
 
 configure do
   set :auth_token, ENV['AUTH_TOKEN']
+  set :default_dashboard, 'home'
 
   helpers do
 

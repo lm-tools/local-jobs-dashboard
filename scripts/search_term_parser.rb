@@ -15,7 +15,7 @@ widget_id = ENV["WIDGET_ID"]
 
 area_files = Hash[area_names.zip(file_names)]
 
-area_files.each do |area_name, file_name|
+area_files.each { |area_name, file_name|
   # Parse CSV and collect the query strings
 
   results = []
@@ -48,4 +48,4 @@ area_files.each do |area_name, file_name|
   uri = URI.parse(dashboard_url+'/widgets/'+widget_id+'_'+area_name)
   http = Net::HTTP.new(uri.host, uri.port)
   response = http.post(uri.path, params.to_json, json_headers)
-end
+}
