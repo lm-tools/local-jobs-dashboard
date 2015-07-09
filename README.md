@@ -16,6 +16,8 @@ The environment variables it requires are:
 * `HTTP_PASSWORD`
 * `AUTH_TOKEN`: auth token to push information to this dashboard
 * `REDISTOGO_URL`: redis URL
+* `AREA_NAMES`: comma-separated names of the areas you are loading
+* `JOBS_API_URL`: URL to our jobs API, probably `https://lm-tools-jobs-api.herokuapp.com`
 
 ## Search term CSV parser and data pusher
 
