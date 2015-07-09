@@ -3,8 +3,8 @@ require 'date'
 
 SCHEDULER.every '10m', :first_in => 0 do
   ENV["AREA_NAMES"].split(",").each do |area|
-    response = Net::HTTP.get_response(URI("#{ENV["JOBS_API_URL"]}/api/jobadverts/?job_centre_label=#{area}"))
-    job_hashes = JSON.parse(response.body)
+    response = Net::HTTP.get_response(URI("#{ENV["JOBS_API_URL"]}/api/jobadverts/?job_centre_label=#{area}&limit=10"))
+    job_hashes = JSON.parse(response.body)["results"]
     jobs = job_hashes.map do |job_hash|
       display_labels = {
         "full_time" => "Full Time",
