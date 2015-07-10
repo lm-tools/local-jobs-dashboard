@@ -11,7 +11,9 @@ auth_token = ENV["AUTH_TOKEN"]
 area_names = ENV["AREA_NAMES"].split(",")
 file_names = ENV["FILE_NAMES"].split(",")
 dashboard_url = ENV["DASHBOARD_URL"]
-widget_id = ENV["WIDGET_ID"]
+searches_widget_id = ENV["SEARCHES_WIDGET_ID"]
+top_terms_widget_id = ENV["TOP_TERMS_WIDGET_ID"]
+top_terms_count = 5
 
 area_files = Hash[area_names.zip(file_names)]
 
@@ -35,17 +37,32 @@ area_files.each { |area_name, file_name|
   end
 
   # Clean the query strings
-
   cleaned_results = results.grep(/./).map(&:downcase).map(&:strip).map do |search_string|
     search_string.gsub(" \\", "")
   end.select { |search_string| search_string.length < 50 }
-
-  # POST to dashboard
+  
+  
+  # Count term frequency 
+  grouped_terms = Hash.new(0)
+  cleaned_results.each do |term|
+    grouped_terms[term] += 1
+  end
+  top_5_terms =  grouped_terms.sort_by {|_key, value| value}.reverse[0..top_terms_count-1].map do | term |
+    {label: term[0], value: term[1]}
+  end
 
   json_headers = {"Content-Type" => "application/json",
                   "Accept" => "application/json"}
+
+  # POST terms to dashboard
   params = {'auth_token' => auth_token, 'items' => cleaned_results}
-  uri = URI.parse(dashboard_url+'/widgets/'+widget_id+'_'+area_name)
+  uri = URI.parse(dashboard_url+'/widgets/'+searches_widget_id+'_'+area_name)
+  http = Net::HTTP.new(uri.host, uri.port)
+  response = http.post(uri.path, params.to_json, json_headers)
+
+  # POST top searches to dashboard
+  params = {'auth_token' => auth_token, 'items' => top_5_terms}
+  uri = URI.parse(dashboard_url+'/widgets/'+top_terms_widget_id+'_'+area_name)
   http = Net::HTTP.new(uri.host, uri.port)
   response = http.post(uri.path, params.to_json, json_headers)
 }
