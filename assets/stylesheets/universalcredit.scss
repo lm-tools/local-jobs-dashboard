@@ -9,15 +9,23 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+a, a:visited, a:hover {
+  color:#005F9E;
+  font-weight:bold;
+}
+
 #home {
   text-align: center;
+  padding:50px;
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    li {
+      margin-bottom:0.5em;
+    }
   }
 }
-
 
 
 
