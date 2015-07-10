@@ -61,7 +61,7 @@ area_files.each { |area_name, file_name|
   response = http.post(uri.path, params.to_json, json_headers)
 
   # POST top searches to dashboard
-  params = {'auth_token' => auth_token, 'items' => top_5_terms, 'title' => 'Top searches'}
+  params = {'auth_token' => auth_token, 'items' => top_5_terms, 'title' => 'Top searches', 'unordered' => true}
   uri = URI.parse(dashboard_url+'/widgets/'+top_terms_widget_id+'_'+area_name)
   http = Net::HTTP.new(uri.host, uri.port)
   response = http.post(uri.path, params.to_json, json_headers)
