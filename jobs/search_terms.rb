@@ -21,7 +21,7 @@ end
 def send_delta_event(id, body, area)
   body[:id] = id
   body[:updatedAt] ||= Time.now.to_i
-  body[:title] = "What people are searching for"
+  body[:title] = "Searches"
   send_event(id, body)
   body[:items] = []
   Sinatra::Application.settings.history[id] = format_event(body.to_json)
