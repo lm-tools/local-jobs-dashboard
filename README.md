@@ -34,6 +34,7 @@ In order to update the data in the `search_terms` scrolling widget, you can:
   * `FILE_NAMES`: comma-seperated names of your CSV files in the `scripts/data` folder
   * `AREA_NAMES`: comma-separated names of the areas you are loading CSVs for (important: should be in the same order as the corresponding `FILE_NAMES`)
   * `DASHBOARD_URL`
-  * `WIDGET_ID`
+  * `SEARCHES_WIDGET_ID`
+  * `TOP_TERMS_WIDGET_ID`
 
 The CSV parser is designed to work with the search term CSV data format received on July 8, 2015.
