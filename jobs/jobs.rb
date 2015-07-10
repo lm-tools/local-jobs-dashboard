@@ -10,14 +10,18 @@ SCHEDULER.every '10m', :first_in => 0 do
         "full_time" => "Full Time",
         "part_time" => "Part Time"
       }
-      {
+      travel_time = TravelTimeFormatter.new(job_hash["travelling_time"].to_i).run
+      result = {
         job_title: job_hash["title"],
         company: job_hash["company_name"],
         created: "Posted "+TimeHumanizer.new(DateTime.now, DateTime.parse(job_hash["created"])).run,
         category: job_hash["category"].sub(/Jobs$/, ''),
-        contract_time: display_labels.fetch(job_hash["contract_time"], job_hash["contract_time"]),
-        travelling_time: "Approximately #{job_hash["travelling_time"]} away"
+        contract_time: display_labels.fetch(job_hash["contract_time"], job_hash["contract_time"])
       }
+      if travel_time
+        result[:travelling_time] = "Approximately #{travel_time} away"
+      end
+      result
     end
     send_event("jobs_#{area}", { title: "Latest jobs", items: jobs })
   end
