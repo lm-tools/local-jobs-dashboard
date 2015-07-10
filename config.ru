@@ -9,6 +9,7 @@ unless $redis
                             :password => redis_uri.password)
 end
 
+set :history_file, nil
 set :history, Redis::HashKey.new('dashing-history')
 
 configure do
