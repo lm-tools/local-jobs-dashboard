@@ -4,7 +4,7 @@
 $background-color:  none;
 $value-color:       #fff;
 
-$title-color:       #fff;
+$title-color:       rgba(255,255,255,0.7);
 $label-color:       #fff;
 $moreinfo-color:    #fff;
 
@@ -22,6 +22,8 @@ $moreinfo-color:    #fff;
 
   .title {
     color: $title-color;
+    text-transform: uppercase;
+    font-size:25px;
   }
 
   ol, ul {
@@ -65,7 +67,7 @@ $moreinfo-color:    #fff;
   }
 
   .updated-at {
-    color: rgba(0, 0, 0, 0.3);
+    color: #fff;
   }
 
   .more-info {
