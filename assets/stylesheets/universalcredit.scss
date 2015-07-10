@@ -1,0 +1,66 @@
+/*
+  //=require_directory .
+  //=require_tree ../../widgets
+*/
+
+body {
+  margin: 0;
+  font-size: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#home {
+  text-align: center;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+
+
+
+
+.gridster {
+  margin: 0px auto;
+}
+
+.list-nostyle {
+  list-style: none;
+}
+
+.gridster ul {
+  list-style: none;
+}
+
+.gs_w {
+  width: 100%;
+  display: table;
+  cursor: pointer;
+}
+
+.widget {
+  padding: 25px 12px;
+  text-align: center;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.more-info {
+  font-size: 15px;
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+}
+
+.updated-at {
+  font-size: 15px;
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+}
