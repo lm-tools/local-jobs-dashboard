@@ -1,12 +1,12 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #12b0c5;
+$background-color:  none;
 $value-color:       #fff;
 
-$title-color:       rgba(255, 255, 255, 0.7);
-$label-color:       rgba(255, 255, 255, 0.7);
-$moreinfo-color:    rgba(255, 255, 255, 0.7);
+$title-color:       #fff;
+$label-color:       #fff;
+$moreinfo-color:    #fff;
 
 // ----------------------------------------------------------------------------
 // Widget-jobs styles
@@ -25,7 +25,8 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
   ol, ul {
-    margin: 0 15px;
+    margin: 0;
+    padding:0;
     text-align: left;
     color: $label-color;
   }
