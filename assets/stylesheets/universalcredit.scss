@@ -1,0 +1,89 @@
+/*
+  //=require_directory .
+  //=require_tree ../../widgets
+*/
+
+body {
+  margin: 0;
+  font-size: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a, a:visited, a:hover {
+  color:#005F9E;
+  font-weight:bold;
+}
+
+#home {
+  text-align: center;
+  padding:50px;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin-bottom:0.5em;
+    }
+  }
+}
+
+.footer {
+  position:fixed;
+  bottom:0;
+  right:0;
+  left:0;
+  padding:10px 10px 5px 10px;
+  z-index:999;
+  background:#fff;
+  h3{
+    position:absolute;
+    right:10px;
+    text-transform:uppercase;
+    color:#005F9E;
+    margin:0;
+    font-size:30px;
+  }
+}
+
+
+.gridster {
+  margin: 0px auto;
+  background:#005F9E;
+}
+
+.list-nostyle {
+  list-style: none;
+}
+
+.gridster ul {
+  list-style: none;
+}
+
+.gs_w {
+  width: 100%;
+  display: table;
+  cursor: pointer;
+}
+
+.widget {
+  padding: 25px 12px;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.more-info {
+  font-size: 15px;
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+}
+
+.updated-at {
+  font-size: 15px;
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+}
