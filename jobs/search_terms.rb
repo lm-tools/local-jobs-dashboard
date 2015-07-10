@@ -3,6 +3,7 @@ require 'json'
 
 def load_searchterm_data(areas)
   @loaded_search_terms = {}
+  @first_time_terms = {}
   areas.each do |area|
     @loaded_search_terms[area] = []
     unless $redis
@@ -14,11 +15,14 @@ def load_searchterm_data(areas)
     search_terms = $redis.hget("dashing-history", "search_terms_#{area}")
     if search_terms
       @loaded_search_terms[area] = JSON.parse(search_terms[6...-1])["items"]
+      @first_time_terms[area] = @loaded_search_terms[area].sample(50).map do |search_term|
+        { value: search_term }
+      end
     end
   end
 end
 
-def send_delta_event(id, body, area)
+def send_delta_event(id, body)
   body[:id] = id
   body[:updatedAt] ||= Time.now.to_i
   body[:title] = "What people are searching for"
@@ -34,6 +38,6 @@ load_searchterm_data(areas)
 SCHEDULER.every '2s' do
   areas.each do |area|
     new_item = { value: @loaded_search_terms[area].sample }
-    send_delta_event("search_ticker_#{area}", { item: new_item }, area)
+    send_delta_event("search_ticker_#{area}", { item: new_item, first_items: @first_time_terms[area] })
   end
 end
