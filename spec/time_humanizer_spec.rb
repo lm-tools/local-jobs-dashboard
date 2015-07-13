@@ -5,7 +5,7 @@ describe TimeHumanizer do
   let(:now) { DateTime.new(2015,1,1,12,0,0)}
   let(:seconds) { rand(0...59) }
   let(:time) { now - seconds/86400.0 }
-  let(:result) { described_class.new(now, time).run }
+  let(:result) { described_class.new(now, time).call }
 
   context "the time is strictly less than a minute ago" do
     it "returns 'now'" do

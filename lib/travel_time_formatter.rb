@@ -3,7 +3,7 @@ class TravelTimeFormatter
     @minutes = number_minutes
   end
 
-  def run
+  def call
     if @minutes < 0 || @minutes > 90
       nil
     elsif @minutes == 60

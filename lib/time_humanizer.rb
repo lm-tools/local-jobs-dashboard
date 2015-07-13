@@ -4,7 +4,7 @@ class TimeHumanizer
     @time = time
   end
 
-  def run
+  def call
     seconds_elapsed = ((@now - @time) * 24 * 60 * 60).to_i
     if seconds_elapsed < 60
       "now"

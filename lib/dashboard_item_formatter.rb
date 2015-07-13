@@ -5,11 +5,11 @@ module DashboardItemFormatter
       "full_time" => "Full Time",
       "part_time" => "Part Time"
     }
-    travel_time = TravelTimeFormatter.new(job_hash["travelling_time"].to_i).run
+    travel_time = TravelTimeFormatter.new(job_hash["travelling_time"].to_i).call
     result = {
       job_title: job_hash["title"],
       company: job_hash["company_name"],
-      created: "Posted "+TimeHumanizer.new(DateTime.now, DateTime.parse(job_hash["created"])).run,
+      created: "Posted "+TimeHumanizer.new(DateTime.now, DateTime.parse(job_hash["created"])).call,
       category: job_hash["category"].sub(/Jobs$/, ''),
       contract_time: display_labels.fetch(job_hash["contract_time"], job_hash["contract_time"])
     }
