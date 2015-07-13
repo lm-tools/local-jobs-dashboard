@@ -1,14 +1,11 @@
-require 'json'
-require 'date'
+include DashboardHelper
+include DashboardItemFormatter
 
 SCHEDULER.every '10m', :first_in => 0 do
-  ENV["AREA_NAMES"].split(",").each do |area|
-    response = Net::HTTP.get_response(URI("#{ENV["JOBS_API_URL"]}/api/top_categories?job_centre_label=#{area}"))
-    category_hashes = JSON.parse(response.body)
+  areas.each do |area|
+    category_hashes = api_client.get_categories(area)
     categories = category_hashes.map do |category_hash|
-      {
-        "label" => category_hash["category"].sub(/Jobs$/, '')
-      }
+      format_category(category_hash)
     end
     send_event("categories_#{area}", { title: "Top Categories", items: categories[0..4] })
   end
