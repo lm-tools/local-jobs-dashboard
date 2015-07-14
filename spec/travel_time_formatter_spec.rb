@@ -1,7 +1,7 @@
 require 'travel_time_formatter'
 
 describe TravelTimeFormatter do
-  let(:result) { described_class.new(input).run }
+  let(:result) { described_class.new(input).call }
   let(:input) { -1 }
 
   context "negative input" do

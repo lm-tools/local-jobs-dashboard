@@ -4,9 +4,9 @@
   <li class="job" data-foreach-item="items">
     <p class="job_title" data-bind="item.job_title"></p>
     <span class="category" data-bind="item.category"></span>
-    <p class="travel_time" data-bind="item.travelling_time"></p>
+    <p class="travel_time" data-bind="item.travelling_time" data-showif="item.travelling_time"></p>
     <p class="created" data-bind="item.created"></p>
-    <span class="contract_time" data-bind="item.contract_time"></span>
+    <span class="contract_time" data-bind="item.contract_time" data-showif="item.contract_time"></span>
     <!-- Kept here for possible use later -->
     <!-- <p class="company-category">
       <span class="company" data-bind="item.company"></span>

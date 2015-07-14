@@ -1,28 +1,36 @@
-require 'json'
-require 'date'
+include DashboardHelper
+include DashboardItemFormatter
+
+@jobs = {}
+@job_ticker_indexes = {}
+@first_time_jobs = {}
+areas.each do |area|
+  job_hashes = api_client.get_jobs(area)
+  @jobs[area] = job_hashes.map do |job_hash|
+    format_job(job_hash)
+  end
+  @first_time_jobs[area] = @jobs[area][0..4]
+  @job_ticker_indexes[area] = 5
+end
+
+# Stores fresh data in @jobs
 
 SCHEDULER.every '10m', :first_in => 0 do
-  ENV["AREA_NAMES"].split(",").each do |area|
-    response = Net::HTTP.get_response(URI("#{ENV["JOBS_API_URL"]}/api/jobadverts/?job_centre_label=#{area}&limit=10"))
-    job_hashes = JSON.parse(response.body)["results"]
-    jobs = job_hashes.map do |job_hash|
-      display_labels = {
-        "full_time" => "Full Time",
-        "part_time" => "Part Time"
-      }
-      travel_time = TravelTimeFormatter.new(job_hash["travelling_time"].to_i).run
-      result = {
-        job_title: job_hash["title"],
-        company: job_hash["company_name"],
-        created: "Posted "+TimeHumanizer.new(DateTime.now, DateTime.parse(job_hash["created"])).run,
-        category: job_hash["category"].sub(/Jobs$/, ''),
-        contract_time: display_labels.fetch(job_hash["contract_time"], job_hash["contract_time"])
-      }
-      if travel_time
-        result[:travelling_time] = "Approximately #{travel_time} away"
-      end
-      result
+  areas.each do |area|
+    job_hashes = api_client.get_jobs(area)
+    @jobs[area] = job_hashes.map do |job|
+      format_job(job)
     end
-    send_event("jobs_#{area}", { title: "Latest jobs", items: jobs })
+    @job_ticker_indexes[area] = 0
+  end
+end
+
+SCHEDULER.every '2s', :first_in => 0 do
+  areas.each do |area|
+    unless @jobs[area].empty?
+      new_item = @jobs[area][@job_ticker_indexes[area] % @jobs[area].count]
+      @job_ticker_indexes[area] += 1
+      send_delta_event("jobs_#{area}", { item: new_item, first_items: @first_time_jobs[area] }, "Latest jobs")
+    end
   end
 end
