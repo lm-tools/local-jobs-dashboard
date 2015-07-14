@@ -14,3 +14,4 @@ class Dashing.Jobs extends Dashing.Widget
     for current_item in current_items
       new_items.push(current_item)
     @set('items', new_items[0..10])
+    $(".widget-jobs > ul > li.closed:nth-child(2)").removeClass("closed")

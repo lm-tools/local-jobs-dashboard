@@ -14,3 +14,5 @@ class Dashing.Scrollinglist extends Dashing.Widget
     for current_item in current_items
       new_items.push(current_item)
     @set('items', new_items[0..50])
+    # Open up the second child on the list to prevent odd loading artefacts
+    $(".widget-scrollinglist > ul > li.closed:nth-child(2)").removeClass("closed")

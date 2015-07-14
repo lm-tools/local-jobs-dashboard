@@ -15,10 +15,9 @@ $moreinfo-color:    #fff;
 
   .job {
     padding-bottom: 5px;
+    background-color: $background-color;
+    vertical-align: top;
   }
-
-  background-color: $background-color;
-  vertical-align: top;
 
   .title {
     color: $title-color;

@@ -90,4 +90,16 @@ a, a:visited, a:hover {
   left: 12px;
   right: 0;
   color: rgba(255, 255, 255, 0.7);
+  display:none;
+}
+
+.scrolling-item {
+  max-height: 120px;
+  transition-property: all;
+  transition-duration: 2s;
+  overflow-y: hidden;
+}
+
+.scrolling-item.closed {
+  max-height: 0;
 }

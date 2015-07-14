@@ -47,10 +47,9 @@ area_files.each { |area_name, file_name|
   cleaned_results.each do |term|
     grouped_terms[term] += 1
   end
-  top_5_terms =  grouped_terms.sort_by {|_key, value| value}.reverse[0..top_terms_count-1].map do | term |
-    {label: term[0], value: term[1]}
+  top_5_terms =  grouped_terms.sort_by {|_key, value| value}.last(5).reverse.map do |term|
+    { label: term[0] }
   end
-
   json_headers = {"Content-Type" => "application/json",
                   "Accept" => "application/json"}
 
