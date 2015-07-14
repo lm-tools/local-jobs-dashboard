@@ -14,8 +14,6 @@ module DashboardHelper
     body[:updatedAt] ||= Time.now.to_i
     body[:title] = title
     send_event(id, body)
-    body[:items] = []
-    Sinatra::Application.settings.history[id] = format_event(body.to_json)
   end
 
   def load_redis_if_not_loaded
