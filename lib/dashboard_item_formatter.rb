@@ -11,10 +11,11 @@ module DashboardItemFormatter
       company: job_hash["company_name"],
       created: "Posted "+TimeHumanizer.new(DateTime.now, DateTime.parse(job_hash["created"])).call,
       category: job_hash["category"].sub(/Jobs$/, ''),
+      category_slug: job_hash["category"].sub(/Jobs$/, '').downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '').gsub('--', '-'),
       contract_time: display_labels.fetch(job_hash["contract_time"], job_hash["contract_time"])
     }
     if travel_time
-      result[:travelling_time] = "Approximately #{travel_time} away"
+      result[:travelling_time] = "#{travel_time} away"
     end
     result
   end

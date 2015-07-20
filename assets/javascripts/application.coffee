@@ -8,15 +8,15 @@
 console.log("Yeah! The dashboard has started!")
 
 Dashing.on 'ready', ->
-  Dashing.widget_margins ||= [3, 5]
-  Dashing.widget_base_dimensions ||= [window.innerWidth/3, window.innerHeight/3]
-  Dashing.numColumns ||= 3
+  Dashing.widget_margins ||= [0, 0]
+  Dashing.widget_base_dimensions ||= [window.innerWidth/6.01, window.innerHeight/10]
+  Dashing.numColumns ||= 6
   Dashing.numRows = 3
 
   contentWidth = (Dashing.widget_base_dimensions[0] + Dashing.widget_margins[0] * 2) * Dashing.numColumns
 
   Batman.setImmediate ->
-    $('.gridster').width(contentWidth)
+    #$('.gridster').width(contentWidth)
     $('.gridster ul:first').gridster
       widget_margins: Dashing.widget_margins
       widget_base_dimensions: Dashing.widget_base_dimensions
@@ -24,3 +24,5 @@ Dashing.on 'ready', ->
       draggable:
         stop: Dashing.showGridsterInstructions
         start: -> Dashing.currentWidgetPositions = Dashing.getWidgetPositions()
+        items: "none"
+

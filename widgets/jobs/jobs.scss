@@ -1,11 +1,10 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  none;
-$value-color:       #fff;
+$background-color:  None;
 
-$title-color:       rgba(255,255,255,0.7);
-$label-color:       #fff;
+$title-color:       #BFC1C3;
+$label-color:       #005F9E;
 $moreinfo-color:    #fff;
 
 // ----------------------------------------------------------------------------
@@ -17,11 +16,135 @@ $moreinfo-color:    #fff;
     padding-bottom: 5px;
     background-color: $background-color;
     vertical-align: top;
+    p{
+      margin:5px 0;
+    }
   }
+
+.job.accounting-finance {
+  color:#231f20;
+}
+
+.job.it{
+  color:#d53880;
+}
+
+.job.sales{
+  color:#df3034;
+}
+
+.job.customer-services{
+  color:#ffbf47;
+}
+
+.job.engineering{
+  color:#28a197;
+}
+
+.job.hr{
+  color:#6f72af;
+}
+
+.job.healthcare-nursing{
+  color:#6f72af;
+}
+
+.job.hospitality-catering{
+  color:#f47738;
+}
+
+.job.pr-advertising-marketing{
+  color:#9f1888;
+}
+
+.job.logistics-warehouse{
+  color:#006435;
+}
+
+.job.teaching{
+  color:#2b8cc4;
+}
+
+.job.trade-construction{
+  color:#912b88;
+}
+
+.job.admin{
+  color:#b10e1e;
+}
+
+.job.legal{
+  color:#b58840;
+}
+
+.job.creative-design{
+  color:#85994b;
+}
+
+.job.graduate{
+  color:#005ea5;
+}
+
+.job.retail{
+  color:#00823B;
+}
+
+.job.consultancy{
+  color:#6F777B;
+}
+
+.job.manufacturing{
+  color:#2e8aca;
+}
+
+.job.scientific-qa{
+  color:#006435;
+}
+
+.job.social-work{
+  color:#4c2c92;
+}
+
+.job.travel{
+  color:#005747;
+}
+
+.job.energy-oil-gas{
+  color:#009ddb;
+}
+
+.job.property{
+  color:#9c132e;
+}
+
+.job.charity-voluntary{
+  color:#009390;
+}
+
+.job.domestic-help-cleaning{
+  color:#00857e;
+}
+
+.job.maintenance{
+  color:#003479;
+}
+
+.job.part-time{
+  color: #00beb7;
+}
+
+.job.other-general{
+  color:#4d2942;
+}
+
+.job.unknown{
+  color:#005abb;
+}
 
   .title {
     color: $title-color;
     text-transform: uppercase;
+    font-weight:normal;
     font-size:25px;
   }
 
@@ -30,6 +153,7 @@ $moreinfo-color:    #fff;
     padding:0;
     text-align: left;
     color: $label-color;
+    font-size:20px;
   }
 
   ol {
@@ -37,32 +161,28 @@ $moreinfo-color:    #fff;
   }
 
   li {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
   }
 
   .job_title {
-    color: $label-color;
     font-weight: bold;
+    font-size:30px;
   }
 
   .company-category {
-    color: $label-color;
     font-size: 14px;
   }
 
   .created {
-    color: $label-color;
     font-size: 12px;
   }
 
   .travel_time {
-    color: $label-color;
-    font-size: 12px;
+    
   }
 
   .contract_time {
-    color: $label-color;
-    font-size: 12px;
+    
   }
 
   .updated-at {

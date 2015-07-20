@@ -1,9 +1,8 @@
 <h1 class="title" data-bind="title"></h1>
-
 <ul>
-  <li class="job scrolling-item closed" data-foreach-item="items">
+  <li data-bind-class="item.category_slug | append ' job scrolling-item closed'" data-foreach-item="items">
     <p class="job_title" data-bind="item.job_title"></p>
-    <span class="category" data-bind="item.category"></span>
+    <span class="company" data-bind="item.company"></span> <span data-bind="item.category"></span>
     <p class="travel_time" data-bind="item.travelling_time" data-showif="item.travelling_time"></p>
     <p class="created" data-bind="item.created"></p>
     <span class="contract_time" data-bind="item.contract_time" data-showif="item.contract_time"></span>
@@ -13,6 +12,3 @@
     </p> -->
   </li>
 </ul>
-
-<p class="more-info" data-bind="moreinfo"></p>
-<p class="updated-at" data-bind="updatedAtMessage"></p>
