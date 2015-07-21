@@ -2,7 +2,7 @@ class LocalJobsApiClient
 
   def get_jobs(area)
     response = Net::HTTP.get_response(URI("#{ENV["JOBS_API_URL"]}/api/jobadverts/?job_centre_label=#{area}&limit=100"))
-    JSON.parse(response.body)["results"]
+    JSON.parse(response.body)
   end
 
   def get_categories(area)
