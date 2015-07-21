@@ -33,7 +33,15 @@ $moreinfo-color:    #6F777B;
   }
 
   li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    border-top:solid 1px #BFC1C3;
+    padding-top:10px;
+    margin-right:40px;
+  }
+
+  li.closed {
+    border-top:none;
+    padding-top:0;
   }
 
   .list-nostyle {

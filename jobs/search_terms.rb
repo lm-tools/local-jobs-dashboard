@@ -7,6 +7,6 @@ include DashboardItemFormatter
 SCHEDULER.every '2s' do
   areas.each do |area|
     new_item = { value: @stored_search_terms[area].sample }
-    send_delta_event("search_ticker_#{area}", { item: new_item, first_items: @first_time_terms[area] }, "People are searching for")
+    send_delta_event("search_ticker_#{area}", { item: new_item, first_items: @first_time_terms[area] }, "What people are searching for")
   end
 end

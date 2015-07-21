@@ -13,12 +13,21 @@ $moreinfo-color:    #fff;
 .widget-jobs {
 
   .job {
-    padding-bottom: 5px;
+
     background-color: $background-color;
     vertical-align: top;
     p{
       margin:5px 0;
     }
+    margin-bottom: 10px;
+    border-top:solid 1px #BFC1C3;
+    padding-top:10px;
+    margin-right:40px;
+  }
+
+  .job.closed {
+    border-top:none;
+    padding-top:0;
   }
 
 .job.accounting-finance {
