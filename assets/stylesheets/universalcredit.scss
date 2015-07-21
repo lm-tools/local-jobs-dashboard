@@ -6,7 +6,7 @@
 body {
   margin: 0;
   font-size: 20px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 a, a:visited, a:hover {
@@ -35,20 +35,23 @@ a, a:visited, a:hover {
   padding:10px 10px 5px 10px;
   z-index:999;
   background:#fff;
+
   h3{
     position:absolute;
     right:10px;
+    top:13px;
     text-transform:uppercase;
     color:#005F9E;
     margin:0;
     font-size:30px;
   }
+
 }
 
 
 .gridster {
   margin: 0px auto;
-  background:#005F9E;
+  background:#fff;
 }
 
 .list-nostyle {
@@ -70,9 +73,8 @@ a, a:visited, a:hover {
   width: 100%;
   vertical-align: middle;
   .title {
-    color: rgba(255,255,255,0.7);
     text-transform: uppercase;
-    font-size:25px;
+    font-size:20px;
   }
 }
 
@@ -102,4 +104,24 @@ a, a:visited, a:hover {
 
 .scrolling-item.closed {
   max-height: 0;
+}
+
+.widget-scrollinglist {
+  font-size:30px;
+  font-weight:bold;
+}
+
+.gridster {
+  li[data-row="1"] {
+    background:#2e8aca;
+    color:#fff;
+    padding-bottom:5px;
+  }
+  li[data-row="3"] {
+    padding-top:35px;
+  }
+}
+
+.hidden-overflow {
+  overflow: hidden;
 }

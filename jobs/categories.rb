@@ -7,6 +7,6 @@ SCHEDULER.every '10m', :first_in => 0 do
     categories = category_hashes.map do |category_hash|
       format_category(category_hash)
     end
-    send_event("categories_#{area}", { title: "Top Categories", items: categories[0..4] })
+    send_event("categories_#{area}", { title: "Top Categories online", items: categories[0..4] })
   end
 end
