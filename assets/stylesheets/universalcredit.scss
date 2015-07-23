@@ -8,6 +8,8 @@ body {
   font-size: 20px;
   font-family: Helvetica, Arial, sans-serif;
 }
+@media (max-width: 767px) { body { font-size: 15px; } }
+
 
 a, a:visited, a:hover {
   color:#005F9E;
@@ -48,6 +50,8 @@ a, a:visited, a:hover {
 
 }
 
+@media (max-width: 767px) { .footer { h3 { font-size: 20px; } } }
+
 
 .gridster {
   margin: 0px auto;
@@ -78,6 +82,8 @@ a, a:visited, a:hover {
   }
 }
 
+@media (max-width: 767px) { .widget { .title { font-size: 15px; } } }
+
 .more-info {
   font-size: 15px;
   position: absolute;
@@ -85,6 +91,8 @@ a, a:visited, a:hover {
   left: 0;
   right: 0;
 }
+
+@media (max-width: 767px) { .more-info { font-size: 12px; } }
 
 .updated-at {
   font-size: 15px;
@@ -94,6 +102,9 @@ a, a:visited, a:hover {
   color: rgba(255, 255, 255, 0.7);
   display:none;
 }
+
+@media (max-width: 767px) { .updated-at { font-size: 10px; } }
+
 
 .scrolling-item {
   max-height: 120px;
@@ -110,6 +121,9 @@ a, a:visited, a:hover {
   font-size:30px;
   font-weight:bold;
 }
+
+@media (max-width: 767px) { .widget-scrollinglist { font-size: 20px; } }
+
 
 .gridster {
   li[data-row="1"] {
