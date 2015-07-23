@@ -157,6 +157,8 @@ $moreinfo-color:    #fff;
     font-size:25px;
   }
 
+  @media (max-width: 767px) { .title { font-size: 18px; } }
+
   ol, ul {
     margin: 0;
     padding:0;
@@ -164,6 +166,9 @@ $moreinfo-color:    #fff;
     color: $label-color;
     font-size:20px;
   }
+
+  @media (max-width: 767px) { ol, ul { font-size: 15px; } }
+
 
   ol {
     list-style-position: inside;
@@ -178,13 +183,19 @@ $moreinfo-color:    #fff;
     font-size:30px;
   }
 
+  @media (max-width: 767px) { .job_title { font-size: 20px; } }
+
   .company-category {
     font-size: 14px;
   }
 
+  @media (max-width: 767px) { .company-category { font-size: 10px; } }
+
   .created {
     font-size: 12px;
   }
+
+  @media (max-width: 767px) { .created { font-size: 9px; } }
 
   .travel_time {
 
