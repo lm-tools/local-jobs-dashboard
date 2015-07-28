@@ -106,10 +106,21 @@ a, a:visited, a:hover {
 @media (max-width: 767px) { .updated-at { font-size: 10px; } }
 
 
-.scrolling-item {
+.widget-jobs .scrolling-item {
+  max-height: 130px;
+  transition-property: all;
+  transition-duration: 4s;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 4s;
+  overflow-y: hidden;
+}
+
+.widget-scrollinglist .scrolling-item {
   max-height: 120px;
   transition-property: all;
   transition-duration: 2s;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 2s;
   overflow-y: hidden;
 }
 
@@ -118,7 +129,7 @@ a, a:visited, a:hover {
 }
 
 .widget-scrollinglist {
-  font-size:30px;
+  font-size:25px;
   font-weight:bold;
 }
 
