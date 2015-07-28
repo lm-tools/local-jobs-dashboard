@@ -25,7 +25,7 @@ SCHEDULER.every '10m', :first_in => 0 do
   end
 end
 
-SCHEDULER.every '2s', :first_in => 0 do
+SCHEDULER.every '4s', :first_in => 0 do
   areas.each do |area|
     unless @jobs[area].empty?
       new_item = @jobs[area][@job_ticker_indexes[area] % @jobs[area].count]
