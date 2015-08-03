@@ -28,7 +28,12 @@ a, a:visited, a:hover {
   }
 }
 
-.header {
+.footer {
+  position:fixed;
+  bottom:0;
+  right:0;
+  left:0;
+  z-index:100;
   padding:10px 10px 5px 10px;
   background:#fff;
   height:35px;
