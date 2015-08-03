@@ -30,7 +30,7 @@ SCHEDULER.every '4s', :first_in => 0 do
     unless @jobs[area].empty?
       new_item = @jobs[area][@job_ticker_indexes[area] % @jobs[area].count]
       @job_ticker_indexes[area] += 1
-      send_delta_event("jobs_#{area}", { item: new_item, first_items: @first_time_jobs[area] }, "Latest jobs online")
+      send_delta_event("jobs_#{area}", { item: new_item, first_items: @first_time_jobs[area] }, "Example jobs being advertised online")
     end
   end
 end

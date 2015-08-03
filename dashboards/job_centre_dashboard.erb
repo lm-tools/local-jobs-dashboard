@@ -1,14 +1,40 @@
 <% content_for :title do %><%=@job_centre_name%> jobs dashboard<% end %>
+<div class="footer">
+  <h3><%=@job_centre_name%></h3>
+  <ul id="logos">
+    <li>
+      <img src="/assets/logo_adzuna.png" />
+    </li>
+    <li>
+      <img src="/assets/logo_cv_library.png" />
+    </li>
+    <li>
+      <img src="/assets/logo_gumtree.png" />
+    </li>
+    <li>
+      <img src="/assets/logo_hirehealthcare.png" />
+    </li>
+    <li>
+      <img src="/assets/logo_jobsite.png" />
+    </li>
+    <li>
+      <img src="/assets/logo_reed.co.uk.png" />
+    </li>
+    <li>
+      <img src="/assets/logo_totaljobs.png" />
+    </li>
+  </ul>
+</div>
 <div class="gridster">
   <ul class="hidden-overflow">
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
       <div data-id="categories_<%=@job_centre_label%>" data-view="List"></div>
     </li>
     <li data-row="1" data-col="3" data-sizex="2" data-sizey="2">
-      <div data-id="top_terms_<%=@job_centre_label%>" data-view="List"></div>
+      <div data-id="employers_<%=@job_centre_label%>" data-view="List"></div>
     </li>
     <li data-row="1" data-col="5" data-sizex="2" data-sizey="2">
-      <div data-id="employers_<%=@job_centre_label%>" data-view="List"></div>
+      <div data-id="top_terms_<%=@job_centre_label%>" data-view="List"></div>
     </li>
     <li data-row="3" data-col="1" data-sizex="4" data-sizey="8">
       <div data-id="jobs_<%=@job_centre_label%>" data-view="Jobs"></div>
@@ -17,8 +43,4 @@
       <div data-id="search_ticker_<%=@job_centre_label%>" data-view="Scrollinglist"></div>
     </li>
   </ul>
-</div>
-<div class="footer">
-  <h3><%=@job_centre_name%></h3>
-  <img src="/assets/uc.svg" height="30" alt="Universal Credit logo"/>
 </div>

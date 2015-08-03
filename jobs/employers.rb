@@ -7,6 +7,6 @@ SCHEDULER.every '10m', :first_in => 0 do
     companies = company_hashes.map do |company_hash|
       format_company(company_hash)
     end
-    send_event("employers_#{area}", { title: "Top Employers online", items: companies[0..4] })
+    send_event("employers_#{area}", { title: "Employers with most adverts", items: companies[0..4] })
   end
 end
