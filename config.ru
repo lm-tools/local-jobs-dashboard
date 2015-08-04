@@ -13,10 +13,10 @@ configure do
   helpers do
 
     def protected!
-      unless authorized?
-        response['WWW-Authenticate'] = %(Basic realm="Restricted Area")
-        throw(:halt, [401, "Not authorized\n"])
-      end
+      #unless authorized?
+      #  response['WWW-Authenticate'] = %(Basic realm="Restricted Area")
+      #  throw(:halt, [401, "Not authorized\n"])
+      #end
     end
 
     def authorized?
