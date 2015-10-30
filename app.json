@@ -11,12 +11,8 @@
     "HTTP_USERNAME":{
       "required":true
     },
-    "LANG":{
-      "required":true
-    },
-    "RACK_ENV":{
-      "required":true
-    },
+    "LANG": "en_US.UTF-8",
+    "RACK_ENV": "production",
     "JOBS_API_URL":{
       "required": true
     },
