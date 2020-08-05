@@ -1,4 +1,6 @@
-# local-jobs-dashboard
+# local-jobs-dashboard - deprecated
+
+*This project is no longer maintained*
 
 This application sits behind HTTP basic auth.
 
